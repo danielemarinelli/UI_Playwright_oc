@@ -18,6 +18,7 @@ import {Page,Locator} from '@playwright/test';
     this.loginBtn=this.page.locator('input.btn.btn-primary')
     this.infoDisplayed=this.page.locator('h2:has-text("Returning Customer")')
     this.errorMsg=this.page.locator('div.alert.alert-danger.alert-dismissible');
+    this.logoutBtn=this.page.locator('a').filter({ hasText: 'Logout' }).last()
     }
 
     async correctLoginPage():Promise<string>{
@@ -47,7 +48,7 @@ import {Page,Locator} from '@playwright/test';
     }
 
     async getLoginErrorMsg(): Promise<string | null>{
-        return (this.errorMsg.textContent())
+        return (this.errorMsg.textContent() ?? '')
     }
     
 

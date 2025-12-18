@@ -39,7 +39,6 @@ test.afterEach(async({page}) => {
 
 test('User registration validation', async() =>{   //we don't need to pass fixture PAGE here, because it is on the hooks
     
-
     
     await hp.myAccountClick();       //step b
     await hp.registerClick();
