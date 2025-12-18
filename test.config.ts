@@ -5,8 +5,8 @@ appUrl="https://tutorialsninja.com/demo"
 
 
 //valid login credentials - create your own login account
-email="pavanol@abc.com"
-password="test@123"
+email="danmarino@gmail.it"
+password="mynewpassword"
 
 //product details
 productName="MacBook"
