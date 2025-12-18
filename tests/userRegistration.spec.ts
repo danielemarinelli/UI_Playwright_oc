@@ -53,12 +53,12 @@ test('User registration validation', async() =>{   //we don't need to pass fixtu
     await reg.setPasswordConfirmation(pwd);
     await reg.selectPolicyCheck();    //step d
     await reg.selectSubscribeRadioBtn();
-    //await reg.clickContinue();
+    await reg.clickContinue();
 
     //validate the confirmation message
 
-    // const confirmation = await reg.getConfirmationMsg();
-    // except(confirmation).toContain('Your Account Has Been Created!')
+     const confirmation = await reg.getConfirmationMsg();
+     expect(confirmation).toContain('Your Account Has Been Created!')
 
     
 

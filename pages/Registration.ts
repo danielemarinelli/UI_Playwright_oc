@@ -71,7 +71,11 @@ export class RegistrationForm {
         await this.policyCheckBox.click()
     }
 
-    
+    // Get the confirmation message text , returns a Promise<string>
+    async getConfirmationMsg():Promise<string>{
+        return await this.confirmationMsg.textContent() ??'';
+    }
+
 
 
 
