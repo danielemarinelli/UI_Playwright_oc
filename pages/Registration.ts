@@ -73,7 +73,7 @@ export class RegistrationForm {
 
     // Get the confirmation message text , returns a Promise<string>
     async getConfirmationMsg():Promise<string>{
-        return await this.confirmationMsg.textContent() ??'';
+        return await this.confirmationMsg.textContent() ??'';  //The nullish coalescing operator (??) returns the right-hand operand when the left-hand operand is null or undefined. Otherwise, it returns the left-hand operand
     }
 
 
