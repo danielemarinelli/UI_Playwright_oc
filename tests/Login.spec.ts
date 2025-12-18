@@ -42,7 +42,7 @@ test.afterEach(async({page}) => {
 })
 
 
-test('User logs with valid credentials', async() =>{
+test('User logs with valid credentials @master @regression @sanity', async() =>{
     //step b)
     await hp.myAccountClick();
     await hp.loginClick();
