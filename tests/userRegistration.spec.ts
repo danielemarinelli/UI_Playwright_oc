@@ -15,16 +15,35 @@ import{RandomDataUtil} from '../utils/randomDataGenerator';
 import {TestConfig} from '../test.config';
 import { faker } from '@faker-js/faker';
 
+//define as global variables to istanciate the classes
+let hp: UI_HomePage;
+let reg: RegistrationForm;
+let config: TestConfig;
 
-test('User registration validation', async({page}) =>{
-    let config = new TestConfig();
+test.beforeEach(async({page}) => {
+    config = new TestConfig();
     await page.goto(config.appUrl);   //step a
+    hp = new UI_HomePage(page);
+    reg = new RegistrationForm(page);
 
-    let hp = new UI_HomePage(page)
+})
+
+//optional hook
+test.afterEach(async({page}) => {
+  await page.waitForTimeout(3000)
+  await page.close();
+
+})
+
+
+test('User registration validation', async() =>{   //we don't need to pass fixture PAGE here, because it is on the hooks
+    
+
+    
     await hp.myAccountClick();       //step b
     await hp.registerClick();
 
-    let reg = new RegistrationForm(page);     //step c
+         //step c
     await reg.setFirstName(RandomDataUtil.getFirstName());
     await reg.setLastName(RandomDataUtil.getLastName());
     await reg.setEmail(RandomDataUtil.getEmail());
@@ -41,6 +60,6 @@ test('User registration validation', async({page}) =>{
     // const confirmation = await reg.getConfirmationMsg();
     // except(confirmation).toContain('Your Account Has Been Created!')
 
-    await page.waitForTimeout(3000)
+    
 
 })
