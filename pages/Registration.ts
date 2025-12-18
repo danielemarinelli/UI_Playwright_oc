@@ -76,8 +76,6 @@ export class RegistrationForm {
         return await this.confirmationMsg.textContent() ??'';  //The nullish coalescing operator (??) returns the right-hand operand when the left-hand operand is null or undefined. Otherwise, it returns the left-hand operand
     }
 
-
-
-
+    
 
 }
