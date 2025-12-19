@@ -1,5 +1,5 @@
 testName,email,password,expected
-Valid login,danmarino@gmail.it.com,mynewpassword,success
+Valid login,danmarino@gmail.it,mynewpassword,success
 Invalid login1,,abcpwd1,failure
 Invalid login2,danmarino@gmail.it,abcpwd1,failure
 Invalid login3,danmarino@gmail.it,,failure
