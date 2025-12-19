@@ -9,6 +9,7 @@
   "tests:regression": "playwright test --grep @regression",
   "tests:regression:headed": "playwright test --grep @regression --headed",
   "tests:datadriven": "playwright test --grep @datadriven",
+  "tests:datadriven:headed": "playwright test --grep @datadriven --headed",
   "all:testsuite:headed": "playwright test --grep @master --headed",
   "tests:sanity:debug": "playwright test --grep @sanity --debug"
   

@@ -6,13 +6,13 @@
         "expected": "success"
     },
     {
-        "testName": "Invalid login",
+        "testName": "Invalid login1",
         "email": "qa_it@email.it",
         "password": "tester@cap",
         "expected": "failure"
     },
     {
-        "testName": "Invalid login",
+        "testName": "Invalid login2",
         "email": "pavanol@abc.com",
         "password": "",
         "expected": "failure"
