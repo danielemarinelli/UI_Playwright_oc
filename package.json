@@ -7,7 +7,7 @@
   "tests:sanity": "playwright test --grep @sanity",
   "tests:smoke": "playwright test --grep @smoke",
   "tests:regression": "playwright test --grep @regression",
-  "tests:regression headed": "playwright test --grep @regression --headed",
+  "tests:regression:headed": "playwright test --grep @regression --headed",
   "tests:datadriven": "playwright test --grep @datadriven",
   "all:testsuite:headed": "playwright test --grep @master --headed",
   "tests:sanity:debug": "playwright test --grep @sanity --debug"
