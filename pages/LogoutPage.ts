@@ -10,13 +10,14 @@ import { UI_HomePage } from './HomePage';
         private readonly accountLogoutMsg:Locator;
 
         constructor(page:Page){
-        this.continueBtn=this.page.getByText('Continue');
+        this.page = page;
+        this.continueBtn=this.page.locator('a:has-text("Continue")');
         this.accountLogoutMsg=this.page.getByRole('heading', { name: 'Account Logout' });
         }
 
         //return istance of UI_HomePage
-        async performLogout(): Promise<UI_HomePage>{
-            this.continueBtn.click();
+        async backToHomePage(): Promise<UI_HomePage>{
+            await this.continueBtn.click();
             return new UI_HomePage(this.page)
         }
 

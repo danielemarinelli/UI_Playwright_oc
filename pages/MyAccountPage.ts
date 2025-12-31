@@ -4,7 +4,7 @@ import {Logout} from './LogoutPage'
     export class MyAccount {
 
     private readonly page:Page; 
-    
+    private readonly editAccountButton:Locator;
     private readonly myOrdersDisplayed:Locator;
     private readonly logoutBtn:Locator;
 
@@ -14,6 +14,7 @@ import {Logout} from './LogoutPage'
 
     this.myOrdersDisplayed=this.page.locator(':text("My Orders")');
     this.logoutBtn=this.page.locator('a').filter({ hasText: 'Logout' }).last()
+    this.editAccountButton=this.page.getByText('Edit Account');
     }
 
 
@@ -26,6 +27,11 @@ import {Logout} from './LogoutPage'
     async performLogOut(): Promise<Logout>{
         await this.logoutBtn.click();
         return new Logout(this.page)
+    }
+
+
+    async editAccount(): Promise<string>{
+        return (await this.editAccountButton.textContent() ?? '')
     }
 
 }

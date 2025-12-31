@@ -11,8 +11,8 @@
   "tests:datadriven": "playwright test --grep @datadriven",
   "tests:datadriven:headed": "playwright test --grep @datadriven --headed",
   "all:testsuite:headed": "playwright test --grep @master --headed",
-  "tests:sanity:debug": "playwright test --grep @sanity --debug"
-  
+  "tests:sanity:debug": "playwright test --grep @sanity --debug",
+  "logout:headed": "playwright test --grep @logout --headed"
   },
   "keywords": [],
   "author": "",
