@@ -25,8 +25,13 @@ import {Logout} from './LogoutPage'
 
 
     async performLogOut(): Promise<Logout>{
+        try {
         await this.logoutBtn.click();
         return new Logout(this.page)
+        } catch (error){
+            console.log(`Exception occurred when clicking logout link: ${error}`)
+            throw error;
+        }
     }
 
 

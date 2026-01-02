@@ -17,8 +17,13 @@ import { UI_HomePage } from './HomePage';
 
         //return istance of UI_HomePage
         async backToHomePage(): Promise<UI_HomePage>{
+            try {
             await this.continueBtn.click();
             return new UI_HomePage(this.page)
+            } catch (error){
+            console.log(`Exception occurred when clicking 'continue button': ${error}`)
+            throw error;
+        }
         }
 
         //returns true is Msg is displayed
