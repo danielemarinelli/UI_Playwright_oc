@@ -63,4 +63,8 @@ test('User performs a logout @master @regression @sanity @logout', async() =>{
     await logout.backToHomePage();
     let flag = await logout.isVisibleAccountLogoutMsg();
     expect(flag).toBeTruthy;
+
+    //assertion syntax sentence
+    let secondMsg=await logout.getSecondMsgWhenLogout();
+    expect(secondMsg).toContainEqual('You have been logged off your account. It is now safe to leave the computer.');
 })
