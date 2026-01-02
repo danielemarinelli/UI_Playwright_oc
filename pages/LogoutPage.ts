@@ -14,8 +14,10 @@ import { UI_HomePage } from './HomePage';
         this.page = page;
         this.continueBtn=this.page.locator('a:has-text("Continue")');
         this.accountLogoutMsg=this.page.getByRole('heading', { name: 'Account Logout' });
-        this.secondLogoutMsg=this.page.locator('#content').locator('p').nth(0)
+        this.secondLogoutMsg=this.page.locator('p:has-text("You have been logged off your account. It is now safe to leave the computer.")')
         }
+
+        
 
         //return istance of UI_HomePage
         async backToHomePage(): Promise<UI_HomePage>{
