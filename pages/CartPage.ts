@@ -35,6 +35,8 @@ constructor(page:Page){
     async clickApplyCouponBtn(){
     try {
         await this.applyCouponBtn.click()
+        const messageText = await this.wrongCouponMsg.textContent();
+        console.log(messageText);
     } catch (error) {
         console.log(`Exception occurred while clicking 'Apply Coupon': ${error}` )
         throw error
@@ -64,7 +66,7 @@ constructor(page:Page){
 
 
     //returns true if Msg is displayed
-        async isVisibleCartMsg(): Promise<boolean>{
+        async isVisibleCartHeader(): Promise<boolean>{
             return await this.pageHeader.isVisible()
         }
 
