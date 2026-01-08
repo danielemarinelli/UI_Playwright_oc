@@ -1,4 +1,5 @@
 import {Page,Locator} from '@playwright/test';
+import {ShoppingCart} from '../pages/CartPage';
 
 
 export class Products {
@@ -53,10 +54,10 @@ constructor(page:Page){
 
 
         // click on 'shopping cart' link to display the cart page
-         async navigateToShoppingCart(){//: Promise<CartPage>{
+         async navigateToShoppingCart(): Promise<ShoppingCart>{
               try {
                 await this.cartLink.click();
-                //return new CartPage(this.page);
+                return new ShoppingCart(this.page);
               } catch (error) {
                 console.log(`Exception occurred while clicking on 'shopping cart' link: ${error}` )
                 throw error;
