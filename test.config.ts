@@ -10,7 +10,7 @@ password="mynewpassword"
 
 //product details
 productName="MacBook"
-productQuantity="2"
-totalPrice="$1,204.00"
+productQuantity="3"
+totalPrice="$1,806.00"
 
 }

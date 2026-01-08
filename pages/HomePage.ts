@@ -12,6 +12,7 @@ private readonly loginLink:Locator;
 private readonly searchField:Locator;
 private readonly lentButton:Locator;
 
+
 //constructor
 constructor(page:Page){
     this.page=page;
@@ -21,6 +22,7 @@ constructor(page:Page){
     this.loginLink=this.page.getByText('Login'); 
     this.searchField=this.page.getByPlaceholder('Search'); 
     this.lentButton=this.page.locator("//i[@class='fa fa-search']"); 
+    
 }
 
 //action methods for every element
@@ -84,6 +86,7 @@ constructor(page:Page){
         throw error
         }
     }
+
 
 
 }
