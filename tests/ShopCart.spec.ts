@@ -17,13 +17,14 @@ import {ResultProductSearch} from '../pages/SearchResultsPage'
 import {TestConfig} from '../test.config';
 import {UI_HomePage} from '../pages/HomePage';
 import {Products} from '../pages/ProductPage';
+import {ShoppingCart} from '../pages/CartPage';
 
 //define as global variables to istanciate the classes
 let hp: UI_HomePage;
 let config: TestConfig;
 let searchResults: ResultProductSearch;
 let p: Products;
-
+let shcart: ShoppingCart;
 
 //This hook runs before each test
 test.beforeEach(async({page}) => {
@@ -33,6 +34,7 @@ test.beforeEach(async({page}) => {
     hp = new UI_HomePage(page)
     searchResults = new ResultProductSearch(page)
     p = new Products(page)
+    shcart = new ShoppingCart(page)
 })
 
 
@@ -62,6 +64,6 @@ test('User searches a product without login and navigate to shopping cart @maste
     expect(await p.isSuccessMessageTextDisplayed()).toBeTruthy();
 
     //step f)
-    p.navigateToShoppingCart();
+    expect((await p.navigateToShoppingCart()).isVisibleCartMsg()).toBeTruthy;
 
 })
