@@ -8,6 +8,10 @@ appUrl="https://tutorialsninja.com/demo"
 email="danmarino@gmail.it"
 password="mynewpassword"
 
+//invalid login credentials
+bademail="danmarino123@gmail.com"
+badpassword="mynewpassword@123!"
+
 //product details
 productName="MacBook"
 productQuantity="3"
