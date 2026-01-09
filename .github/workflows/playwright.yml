@@ -28,7 +28,7 @@ jobs:
     - name: Run Playwright tests
       #run: npx playwright test
       #run: npx playwright test --grep "@sanity"
-      run: npm run tests:smoke
+      run: npm run tests:master
     
     - name: Upload Playwright HTML Report
       if: always()
