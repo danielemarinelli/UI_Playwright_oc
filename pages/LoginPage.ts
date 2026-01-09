@@ -25,7 +25,6 @@ import {Page,Locator} from '@playwright/test';
 
     }
 
-
      async insertEmail(email:string):Promise<void>{
         await this.emailField.fill(email)
     }
