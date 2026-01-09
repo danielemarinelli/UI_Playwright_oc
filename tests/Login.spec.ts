@@ -42,7 +42,7 @@ test.afterEach(async({page}) => {
 })
 
 
-test('User logs with valid credentials @master @regression @sanity', async() =>{
+test('User logs with valid credentials @master @regression @sanity @login', async() =>{
     console.log("User logs with valid credentials")
     //step b)
     await hp.myAccountClick();
@@ -54,6 +54,23 @@ test('User logs with valid credentials @master @regression @sanity', async() =>{
     // step d)
     let label=await myAccount.getOrdersLabel();
     expect(label).toContain('My Orders');
+
+
+})
+
+
+test('User inserts invalid credentials @master @regression @sanity @login', async() =>{
+    console.log("User inserts invalid credentials")
+    //step b)
+    await hp.myAccountClick();
+    await hp.loginClick();
+    //step c) 
+    await login.insertEmail(config.bademail);
+    await login.insertPassword(config.badpassword);
+    await login.clickLoginBtn();
+
+    let error = await login.getLoginErrorMsg();
+    expect(error).toBe('Warning: No match for E-Mail Address and/or Password.');
 
 
 })
