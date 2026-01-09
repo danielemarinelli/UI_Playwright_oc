@@ -69,7 +69,7 @@ test('User searches a product, adds it to the cart and removes it @master @regre
     expect(cartMesDisplayed).toBe("Your shopping cart is empty!");
 
     //step h)
-    let hp = await shop.clickContinueButtonToGoToHomePage()
+    hp = await shop.clickContinueButtonToGoToHomePage()
     expect(await hp.doesHomePageExist()).toBeTruthy();
     
 
