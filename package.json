@@ -13,7 +13,8 @@
   "all:testsuite:headed": "playwright test --grep @master --headed",
   "tests:sanity:debug": "playwright test --grep @sanity --debug",
   "logout:headed": "playwright test --grep @logout --headed",
-  "remove:headed": "playwright test --grep @removeProduct --headed"
+  "remove:headed": "playwright test --grep @removeProduct --headed",
+  "tests:login:headed": "playwright test --grep @login --headed"
   },
   "keywords": [],
   "author": "",
