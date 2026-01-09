@@ -48,7 +48,7 @@ test.afterEach(async({page}) => {
 })
 
 
-test('User searches a product, adds it to the cart and removes it @master @regression @sanity', async() =>{
+test('User searches a product, adds it to the cart and removes it @smoke @regression', async() =>{
     //step b)
     let pName = config.productName; // fetching the product name from the config file
     await hp.enterProductName(pName);

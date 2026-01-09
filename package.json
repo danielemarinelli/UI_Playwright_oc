@@ -5,14 +5,15 @@
   "scripts": {
   "tests:master": "playwright test --grep @master",
   "tests:sanity": "playwright test --grep @sanity",
-  "tests:smoke": "playwright test --grep @smoke",
+  "tests:smoke": "playwright test --grep @smoke --headed",
   "tests:regression": "playwright test --grep @regression",
   "tests:regression:headed": "playwright test --grep @regression --headed",
   "tests:datadriven": "playwright test --grep @datadriven",
   "tests:datadriven:headed": "playwright test --grep @datadriven --headed",
   "all:testsuite:headed": "playwright test --grep @master --headed",
   "tests:sanity:debug": "playwright test --grep @sanity --debug",
-  "logout:headed": "playwright test --grep @logout --headed"
+  "logout:headed": "playwright test --grep @logout --headed",
+  "remove:headed": "playwright test --grep @removeProduct --headed"
   },
   "keywords": [],
   "author": "",
