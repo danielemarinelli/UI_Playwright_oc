@@ -1,4 +1,5 @@
 import {Page,Locator} from '@playwright/test';
+import { UI_HomePage } from './HomePage';
 
 
 export class ShoppingCart {
@@ -12,7 +13,8 @@ private readonly couponField:Locator;
 private readonly applyCouponBtn:Locator;
 private readonly removeBtn:Locator;
 private readonly wrongCouponMsg:Locator;
-
+private readonly removeMsgDisplayed:Locator;
+private readonly continueBtn:Locator;
 
 //constructor
 constructor(page:Page){
@@ -24,12 +26,11 @@ constructor(page:Page){
     this.applyCouponBtn=this.page.locator("#button-coupon") 
     this.removeBtn=this.page.locator(".fa.fa-times-circle") 
     this.wrongCouponMsg=this.page.locator('div.alert.alert-danger.alert-dismissible')
-    
+    this.removeMsgDisplayed=this.page.locator('p').filter({ hasText: 'Your shopping cart is empty!' }).first()
+    this.continueBtn=this.page.getByText('Continue')
 }
 
     //action methods for every element  
-
-    
 
     // click ApplyCoupon button 
     async clickApplyCouponBtn(){
@@ -80,5 +81,34 @@ constructor(page:Page){
             } catch (error){
                 return false;}
         }
+
+
+        // click on the remove button to remove the product from the cart 
+        async removeProductFromCart(){
+        try {
+            await this.removeBtn.click()
+        } catch (error) {
+            console.log(`Exception occurred while clicking on 'remove icon': ${error}` )
+            throw error
+            }
+        }
+
+        async getEmptyCartMessage(): Promise<string | null>{
+            return this.removeMsgDisplayed.textContent();
+        }
+
+        //click on continue button to go back at homepage
+        async clickContinueButtonToGoToHomePage(): Promise<UI_HomePage>{
+                try {
+                    await this.continueBtn.click();
+                    return new UI_HomePage(this.page)
+                } catch (error){
+                    console.log(`Exception occurred when clicking 'continue button': ${error}`)
+                    throw error;
+                }
+        }
+        
+        
+
 
 }
