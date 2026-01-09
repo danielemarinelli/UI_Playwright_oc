@@ -48,6 +48,7 @@ test.afterEach(async({page}) => {
 
 test('User searches a product without login and navigate to shopping cart @master @regression @sanity', async() =>{
     //step b)
+    console.log("User navigated to cart page")
     let pName = config.productName; // fetching the product name from the config file
     await hp.enterProductName(pName);
     // step c)

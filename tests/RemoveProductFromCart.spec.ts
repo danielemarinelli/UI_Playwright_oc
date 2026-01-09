@@ -48,8 +48,9 @@ test.afterEach(async({page}) => {
 })
 
 
-test('User searches a product, adds it to the cart and removes it @smoke @regression', async() =>{
+test('User searches a product, adds it to the cart and removes it @ master @smoke @regression', async() =>{
     //step b)
+    console.log("Remove test from cart")
     let pName = config.productName; // fetching the product name from the config file
     await hp.enterProductName(pName);
     // step c)

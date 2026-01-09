@@ -49,6 +49,7 @@ test.afterEach(async({page}) => {
 
 test('User performs a logout @master @regression @sanity @logout', async() =>{
     //step b)
+    console.log("LogOut test")
     await hp.myAccountClick();
     await hp.loginClick();
     //step c) 

@@ -42,6 +42,7 @@ test.afterEach(async({page}) => {
 
 test('User searches a product without login in the account @master @regression @sanity', async() =>{
     //step b)
+    console.log("Search product test")
     let pName = config.productName; // fetching the product name from the config file
     await hp.enterProductName(pName);
     // step c)

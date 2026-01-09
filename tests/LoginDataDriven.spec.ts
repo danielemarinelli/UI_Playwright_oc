@@ -12,6 +12,7 @@ const jsonTestData:any = DataProvider.getDataFromJSON(jsonPath);
 
 for(const data of jsonTestData){
     test(`Login Test with JSON Data: ${data.testName} @datadriven`, async({page}) =>{
+            console.log("Data Driven test with JSON Data")    
             const config = new TestConfig();
             await page.goto(config.appUrl);
             const hp = new UI_HomePage(page)
@@ -42,6 +43,7 @@ const csvTestData:any = DataProvider.getDataFromCSV(csvPath);
 
 for(const data of csvTestData){
     test(`Login Test with CSV Data: ${data.testName} @datadriven`, async({page}) =>{
+        console.log("Data Driven test with CSV Data")
             const config = new TestConfig();
             await page.goto(config.appUrl);
             const hp = new UI_HomePage(page)

@@ -49,6 +49,7 @@ test.afterEach(async({page}) => {
 
 
 test('User searches a product and adds it to the cart, inserting a wrong coupon code @master @regression @smoke', async() =>{
+    console.log("Insert a wrong coupon")
     //step b)
     let pName = config.productName; // fetching the product name from the config file
     await hp.enterProductName(pName);
